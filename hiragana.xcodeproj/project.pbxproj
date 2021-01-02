@@ -10,12 +10,13 @@
 		C1A9E8B325A0AF1E000B2AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8B225A0AF1E000B2AC5 /* AppDelegate.swift */; };
 		C1A9E8B525A0AF1E000B2AC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8B425A0AF1E000B2AC5 /* SceneDelegate.swift */; };
 		C1A9E8B725A0AF1E000B2AC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8B625A0AF1E000B2AC5 /* ViewController.swift */; };
-		C1A9E8BA25A0AF1E000B2AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8B825A0AF1E000B2AC5 /* Main.storyboard */; };
 		C1A9E8BD25A0AF1E000B2AC5 /* hiragana.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8BB25A0AF1E000B2AC5 /* hiragana.xcdatamodeld */; };
 		C1A9E8BF25A0AF1F000B2AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8BE25A0AF1F000B2AC5 /* Assets.xcassets */; };
 		C1A9E8C225A0AF1F000B2AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8C025A0AF1F000B2AC5 /* LaunchScreen.storyboard */; };
 		C1A9E8CD25A0AF1F000B2AC5 /* hiraganaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8CC25A0AF1F000B2AC5 /* hiraganaTests.swift */; };
 		C1A9E8D825A0AF1F000B2AC5 /* hiraganaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8D725A0AF1F000B2AC5 /* hiraganaUITests.swift */; };
+		C1A9E8ED25A0AF81000B2AC5 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */; };
+		C1A9E8EE25A0AF81000B2AC5 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		C1A9E8B225A0AF1E000B2AC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1A9E8B425A0AF1E000B2AC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C1A9E8B625A0AF1E000B2AC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C1A9E8B925A0AF1E000B2AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1A9E8BC25A0AF1E000B2AC5 /* hiragana.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hiragana.xcdatamodel; sourceTree = "<group>"; };
 		C1A9E8BE25A0AF1F000B2AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1A9E8C125A0AF1F000B2AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		C1A9E8D325A0AF1F000B2AC5 /* hiraganaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hiraganaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A9E8D725A0AF1F000B2AC5 /* hiraganaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hiraganaUITests.swift; sourceTree = "<group>"; };
 		C1A9E8D925A0AF1F000B2AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,12 @@
 				C1A9E8B225A0AF1E000B2AC5 /* AppDelegate.swift */,
 				C1A9E8B425A0AF1E000B2AC5 /* SceneDelegate.swift */,
 				C1A9E8B625A0AF1E000B2AC5 /* ViewController.swift */,
-				C1A9E8B825A0AF1E000B2AC5 /* Main.storyboard */,
 				C1A9E8BE25A0AF1F000B2AC5 /* Assets.xcassets */,
 				C1A9E8C025A0AF1F000B2AC5 /* LaunchScreen.storyboard */,
 				C1A9E8C325A0AF1F000B2AC5 /* Info.plist */,
 				C1A9E8BB25A0AF1E000B2AC5 /* hiragana.xcdatamodeld */,
+				C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */,
+				C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */,
 			);
 			path = hiragana;
 			sourceTree = "<group>";
@@ -236,7 +239,7 @@
 			files = (
 				C1A9E8C225A0AF1F000B2AC5 /* LaunchScreen.storyboard in Resources */,
 				C1A9E8BF25A0AF1F000B2AC5 /* Assets.xcassets in Resources */,
-				C1A9E8BA25A0AF1E000B2AC5 /* Main.storyboard in Resources */,
+				C1A9E8EE25A0AF81000B2AC5 /* mainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +266,7 @@
 			files = (
 				C1A9E8BD25A0AF1E000B2AC5 /* hiragana.xcdatamodeld in Sources */,
 				C1A9E8B725A0AF1E000B2AC5 /* ViewController.swift in Sources */,
+				C1A9E8ED25A0AF81000B2AC5 /* mainViewController.swift in Sources */,
 				C1A9E8B325A0AF1E000B2AC5 /* AppDelegate.swift in Sources */,
 				C1A9E8B525A0AF1E000B2AC5 /* SceneDelegate.swift in Sources */,
 			);
@@ -300,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C1A9E8B825A0AF1E000B2AC5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1A9E8B925A0AF1E000B2AC5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C1A9E8C025A0AF1F000B2AC5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
