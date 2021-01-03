@@ -26,12 +26,12 @@ class mainViewController: UIViewController,UITextViewDelegate {
     
     @IBOutlet weak var creditImage: UIImageView!
     
-    //入力用文字列
+    //入力用文字列保管用
     var input_text:String! = ""
 
     //ひらがな化API
     let url_string:String! = "https://labs.goo.ne.jp/api/hiragana" //url
-    let api_key:String! = "7a3f0555810ef9a28e9f27b76672e86ed09fd9676b37c6990337f0210608fc68" //
+    let app_id:String! = "7a3f0555810ef9a28e9f27b76672e86ed09fd9676b37c6990337f0210608fc68" //
     let credit_url_string:String! = "http://u.xgoo.jp/img/sgoo.png" //クレジット用画像URL
     let link_url_string:String! = "https://labs.goo.ne.jp" //リンク先
     
@@ -85,24 +85,13 @@ class mainViewController: UIViewController,UITextViewDelegate {
         self.creditImage.kf.setImage(with: url)
         
     }
-    
-    func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
-        do {
-            let data = try Data(contentsOf: url!)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
-    }
-    
+
     /// 変換ボタン
     @IBAction func convertButtonTouchUpInside(_ sender: Any) {
         if self.input_text.count > 0 {
             
             //apiパラメータ設定
-            let postdata = postData(app_id: self.api_key,
+            let postdata = postData(app_id: self.app_id,
                                     request_id: "record003",
                                     sentence: self.input_text,
                                     output_type: "hiragana")
@@ -147,10 +136,6 @@ class mainViewController: UIViewController,UITextViewDelegate {
                 }
             }
             task.resume()
-            
-            
-        } else {
-            //未入力エラー表示
         }
     }
     ///入力部分クリアボタン
@@ -171,7 +156,6 @@ class mainViewController: UIViewController,UITextViewDelegate {
     
     /// クレジット画像タップで外部ブラウザ起動
     @objc func creditButtonTapped() {
-        print("taptap")
         if UIApplication.shared.canOpenURL(URL(string: self.link_url_string)!) {
               UIApplication.shared.open(URL(string: self.link_url_string)!)
         } else {
