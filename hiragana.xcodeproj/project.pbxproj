@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		C1A9E8D825A0AF1F000B2AC5 /* hiraganaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8D725A0AF1F000B2AC5 /* hiraganaUITests.swift */; };
 		C1A9E8ED25A0AF81000B2AC5 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */; };
 		C1A9E8EE25A0AF81000B2AC5 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */; };
+		ED5E4BEA5D66BDAC39B7C4EC /* Pods_hiragana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A91AE01F92B1A7D8C9505 /* Pods_hiragana.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018A91AE01F92B1A7D8C9505 /* Pods_hiragana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hiragana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8FC6D8F0C55604A12409C5B /* Pods-hiragana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hiragana.release.xcconfig"; path = "Target Support Files/Pods-hiragana/Pods-hiragana.release.xcconfig"; sourceTree = "<group>"; };
 		C1A9E8AF25A0AF1E000B2AC5 /* hiragana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiragana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A9E8B225A0AF1E000B2AC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1A9E8B425A0AF1E000B2AC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		C1A9E8D925A0AF1F000B2AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
+		EB1F25FE03147423B36A5437 /* Pods-hiragana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hiragana.debug.xcconfig"; path = "Target Support Files/Pods-hiragana/Pods-hiragana.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5E4BEA5D66BDAC39B7C4EC /* Pods_hiragana.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		543932E9CAAA6DDEB6FBBC76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB1F25FE03147423B36A5437 /* Pods-hiragana.debug.xcconfig */,
+				A8FC6D8F0C55604A12409C5B /* Pods-hiragana.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		82CD27073822EABAEE1E3920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				018A91AE01F92B1A7D8C9505 /* Pods_hiragana.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C1A9E8A625A0AF1E000B2AC5 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +109,8 @@
 				C1A9E8CB25A0AF1F000B2AC5 /* hiraganaTests */,
 				C1A9E8D625A0AF1F000B2AC5 /* hiraganaUITests */,
 				C1A9E8B025A0AF1E000B2AC5 /* Products */,
+				543932E9CAAA6DDEB6FBBC76 /* Pods */,
+				82CD27073822EABAEE1E3920 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1A9E8DC25A0AF1F000B2AC5 /* Build configuration list for PBXNativeTarget "hiragana" */;
 			buildPhases = (
+				301B3B2D244950E712E810CA /* [CP] Check Pods Manifest.lock */,
 				C1A9E8AB25A0AF1E000B2AC5 /* Sources */,
 				C1A9E8AC25A0AF1E000B2AC5 /* Frameworks */,
 				C1A9E8AD25A0AF1E000B2AC5 /* Resources */,
+				3C7E7405985E943B9ECED3D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +284,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		301B3B2D244950E712E810CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hiragana-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C7E7405985E943B9ECED3D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hiragana/Pods-hiragana-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hiragana/Pods-hiragana-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hiragana/Pods-hiragana-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C1A9E8AB25A0AF1E000B2AC5 /* Sources */ = {
@@ -433,6 +501,7 @@
 		};
 		C1A9E8DD25A0AF1F000B2AC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB1F25FE03147423B36A5437 /* Pods-hiragana.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,15 +512,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokoni.hiragana.hiragana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokoni.hiragana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C1A9E8DE25A0AF1F000B2AC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8FC6D8F0C55604A12409C5B /* Pods-hiragana.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,10 +532,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokoni.hiragana.hiragana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokoni.hiragana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

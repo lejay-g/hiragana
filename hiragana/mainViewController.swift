@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class mainViewController: UIViewController,UITextViewDelegate {
 
@@ -23,12 +24,15 @@ class mainViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var beforeConvertView: UIView!
     @IBOutlet weak var afterConvertView: UIView!
     
+    @IBOutlet weak var creditImage: UIImageView!
+    
     //入力用文字列
     var input_text:String! = ""
 
     //ひらがな化API
     let url_string:String! = "https://labs.goo.ne.jp/api/hiragana" //url
     let api_key:String! = "7a3f0555810ef9a28e9f27b76672e86ed09fd9676b37c6990337f0210608fc68" //
+    let credit_url_string:String! = "http://u.xgoo.jp/img/sgoo.png" //クレジット用画像URL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +75,23 @@ class mainViewController: UIViewController,UITextViewDelegate {
         self.inputWhiteBoxView.layer.cornerRadius = 10
         self.outputWhiteBoxView.layer.cornerRadius = 10
         
+        //クレジット画像セット
+        let url = URL(string: self.credit_url_string)
+        self.creditImage.kf.setImage(with: url)
+        
     }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
+    }
+    
     /// 変換ボタン
     @IBAction func convertButtonTouchUpInside(_ sender: Any) {
         if self.input_text.count > 0 {
