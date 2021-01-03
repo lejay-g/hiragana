@@ -7,11 +7,21 @@
 
 import UIKit
 
-class mainViewController: UIViewController,UITextFieldDelegate {
+class mainViewController: UIViewController,UITextViewDelegate {
 
-    @IBOutlet weak var originalText: UITextField!
+    @IBOutlet weak var originalText: UITextView!
     @IBOutlet weak var convertButton: UIButton!
+    @IBOutlet weak var convertButtonView: UIView!
     @IBOutlet weak var hiraganaText: UILabel!
+    
+    @IBOutlet weak var inputBoxView: UIView!
+    @IBOutlet weak var outputBoxView: UIView!
+    
+    @IBOutlet weak var inputWhiteBoxView: UIView!
+    @IBOutlet weak var outputWhiteBoxView: UIView!
+    
+    @IBOutlet weak var beforeConvertView: UIView!
+    @IBOutlet weak var afterConvertView: UIView!
     
     //入力用文字列
     var input_text:String! = ""
@@ -23,8 +33,16 @@ class mainViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //初期設定
+        self.set_disp()
+        self.set_toolbar()
+        
+        self.originalText.delegate = self
 
-        // キーボードの完了ボタン
+    }
+    
+    ///キーボードの完了ボタン設定
+    func set_toolbar(){
         // ツールバー生成(サイズはsizeToFitメソッドで自動で調整される)
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         // サイズの自動調整(あえて手動で実装したい場合はCGRectに記述してsizeToFitは呼び出さないこと）
@@ -41,17 +59,24 @@ class mainViewController: UIViewController,UITextFieldDelegate {
         toolBar.items = [spacer, commitButton]
         // キーボードにツールバーを設定
         self.originalText.inputAccessoryView = toolBar
-        
-        self.originalText.delegate = self
-
     }
     
-    
+    ///パーツ初期設定
+    func set_disp(){
+        
+        self.beforeConvertView.isHidden = false
+        self.afterConvertView.isHidden = true
+        
+        self.convertButtonView.layer.cornerRadius = 30
+        self.inputWhiteBoxView.layer.cornerRadius = 10
+        self.outputWhiteBoxView.layer.cornerRadius = 10
+        
+    }
     /// 変換ボタン
     @IBAction func convertButtonTouchUpInside(_ sender: Any) {
         if self.input_text.count > 0 {
             
-            //パラメータ設定
+            //apiパラメータ設定
             let postdata = postData(app_id: self.api_key,
                                     request_id: "record003",
                                     sentence: self.input_text,
@@ -88,6 +113,8 @@ class mainViewController: UIViewController,UITextFieldDelegate {
                     }
                     print(jsonData.converted)
                     DispatchQueue.main.async {
+                        self.beforeConvertView.isHidden = true
+                        self.afterConvertView.isHidden = false
                         self.hiraganaText.text = jsonData.converted
                     }
                 } else {
@@ -101,23 +128,27 @@ class mainViewController: UIViewController,UITextFieldDelegate {
             //未入力エラー表示
         }
     }
+    ///入力部分クリアボタン
+    @IBAction func clearButtonTouchUpInside(_ sender: Any) {
+        self.originalText.text = ""
+        self.hiraganaText.text = ""
+        self.afterConvertView.isHidden = true
+        self.beforeConvertView.isHidden = false
+    }
     
-    /// キーボード用doneボタン
+    /// キーボード用doneボタンで入力完了
     @objc func commitButtonTapped() {
         self.view.endEditing(true)
     }
     
-
     // 入力完了
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
-        if textField == self.originalText {
-            self.input_text = textField.text
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if textView == self.originalText {
+            self.input_text = textView.text
         }
         
         return true
     }
-
 
 }
 
