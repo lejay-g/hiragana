@@ -17,6 +17,7 @@
 		C1A9E8D825A0AF1F000B2AC5 /* hiraganaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8D725A0AF1F000B2AC5 /* hiraganaUITests.swift */; };
 		C1A9E8ED25A0AF81000B2AC5 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */; };
 		C1A9E8EE25A0AF81000B2AC5 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */; };
+		C1B2093D25A1969C00EBE15A /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2093C25A1969C00EBE15A /* PlaceHolderTextView.swift */; };
 		ED5E4BEA5D66BDAC39B7C4EC /* Pods_hiragana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A91AE01F92B1A7D8C9505 /* Pods_hiragana.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		C1A9E8D925A0AF1F000B2AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mainViewController.xib; sourceTree = "<group>"; };
+		C1B2093C25A1969C00EBE15A /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		EB1F25FE03147423B36A5437 /* Pods-hiragana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hiragana.debug.xcconfig"; path = "Target Support Files/Pods-hiragana/Pods-hiragana.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				C1A9E8BB25A0AF1E000B2AC5 /* hiragana.xcdatamodeld */,
 				C1A9E8EB25A0AF81000B2AC5 /* mainViewController.swift */,
 				C1A9E8EC25A0AF81000B2AC5 /* mainViewController.xib */,
+				C1B2093B25A1968300EBE15A /* Utility */,
 			);
 			path = hiragana;
 			sourceTree = "<group>";
@@ -156,6 +159,14 @@
 				C1A9E8D925A0AF1F000B2AC5 /* Info.plist */,
 			);
 			path = hiraganaUITests;
+			sourceTree = "<group>";
+		};
+		C1B2093B25A1968300EBE15A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C1B2093C25A1969C00EBE15A /* PlaceHolderTextView.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1A9E8BD25A0AF1E000B2AC5 /* hiragana.xcdatamodeld in Sources */,
+				C1B2093D25A1969C00EBE15A /* PlaceHolderTextView.swift in Sources */,
 				C1A9E8B725A0AF1E000B2AC5 /* ViewController.swift in Sources */,
 				C1A9E8ED25A0AF81000B2AC5 /* mainViewController.swift in Sources */,
 				C1A9E8B325A0AF1E000B2AC5 /* AppDelegate.swift in Sources */,

@@ -33,6 +33,7 @@ class mainViewController: UIViewController,UITextViewDelegate {
     let url_string:String! = "https://labs.goo.ne.jp/api/hiragana" //url
     let api_key:String! = "7a3f0555810ef9a28e9f27b76672e86ed09fd9676b37c6990337f0210608fc68" //
     let credit_url_string:String! = "http://u.xgoo.jp/img/sgoo.png" //クレジット用画像URL
+    let link_url_string:String! = "https://labs.goo.ne.jp" //リンク先
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,10 @@ class mainViewController: UIViewController,UITextViewDelegate {
         
         self.originalText.delegate = self
 
+        //クレジット画像タップ動作セット
+        let creditTap = UITapGestureRecognizer(target: self,
+                                               action: #selector(creditButtonTapped))
+        self.creditImage.addGestureRecognizer(creditTap)
     }
     
     ///キーボードの完了ボタン設定
@@ -154,6 +159,9 @@ class mainViewController: UIViewController,UITextViewDelegate {
         self.hiraganaText.text = ""
         self.afterConvertView.isHidden = true
         self.beforeConvertView.isHidden = false
+        
+        //textViewにフォーカスする
+        self.originalText.becomeFirstResponder()
     }
     
     /// キーボード用doneボタンで入力完了
@@ -161,6 +169,15 @@ class mainViewController: UIViewController,UITextViewDelegate {
         self.view.endEditing(true)
     }
     
+    /// クレジット画像タップで外部ブラウザ起動
+    @objc func creditButtonTapped() {
+        print("taptap")
+        if UIApplication.shared.canOpenURL(URL(string: self.link_url_string)!) {
+              UIApplication.shared.open(URL(string: self.link_url_string)!)
+        } else {
+              print("ブラウザ起動失敗")
+        }
+    }
     // 入力完了
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         if textView == self.originalText {
